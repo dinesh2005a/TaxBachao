@@ -1,62 +1,68 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const deadlines = [
-        { title: "Foundations of Business Communication II", subtitle: "Module 4 CLA", deadline: "2025-03-19T23:59:59" },
-        { title: "Principles of Microeconomics", subtitle: "Module 4 CLA", deadline: "2025-03-19T23:59:59" },
-        { title: "Venturing on a Budget: Rs250 Venture", subtitle: "Module 3 CLA", deadline: "2025-03-19T23:59:59" },
-        { title: "Advanced Statistics for Business", subtitle: "Mid-Term 2", deadline: "2025-03-26T23:59:59" }
-    ];
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
 
-    const sessions = [
-        { title: "Learning Pods", subtitle: "Briefing Meet", date: "March 19, 2025", time: "4:00 PM IST", link: "#", available: true },
-        { title: "Venturing on a Budget: Rs250 Venture", subtitle: "Faculty Live Session", date: "March 20, 2025", time: "TBA", link: "#", available: false },
-        { title: "Foundations of Business Communication II", subtitle: "SME Live Session", date: "March 21, 2025", time: "5:00 PM IST", link: "#", available: false }
-    ];
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
-    function updateCountdowns() {
-        const now = new Date().getTime();
-        let deadlineHTML = "";
+.logo {
+    width: 60px;
+}
 
-        deadlines.forEach((item) => {
-            const deadlineTime = new Date(item.deadline).getTime();
-            const timeLeft = deadlineTime - now;
+h1, h2 {
+    color: #d10024;
+}
 
-            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+.note {
+    font-size: 14px;
+    color: gray;
+}
 
-            deadlineHTML += `
-                <div class="card">
-                    <h3>${item.title}</h3>
-                    <p>${item.subtitle}</p>
-                    <p class="timer">${days}d ${hours}h ${minutes}m ${seconds}s</p>
-                </div>
-            `;
-        });
+.card {
+    background: #fff;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
 
-        document.getElementById("deadlines").innerHTML = deadlineHTML;
-    }
+.card:hover {
+    transform: scale(1.05);
+    background: #ffe3e3;
+}
 
-    function loadSessions() {
-        let sessionHTML = "";
+.timer {
+    font-weight: bold;
+    color: red;
+}
 
-        sessions.forEach((session) => {
-            sessionHTML += `
-                <div class="card">
-                    <h3>${session.title}</h3>
-                    <p>${session.subtitle}</p>
-                    <p>${session.date} - ${session.time}</p>
-                    <a href="${session.link}" class="button ${session.available ? "join" : "disabled"}">
-                        ${session.available ? "JOIN SESSION" : "LINK NOT AVAILABLE"}
-                    </a>
-                </div>
-            `;
-        });
+.button {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
 
-        document.getElementById("sessions").innerHTML = sessionHTML;
-    }
+.join {
+    background: green;
+}
 
-    setInterval(updateCountdowns, 1000);
-    updateCountdowns();
-    loadSessions();
-});
+.disabled {
+    background: gray;
+    cursor: not-allowed;
+}
