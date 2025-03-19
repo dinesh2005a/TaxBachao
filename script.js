@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const deadlines = [
-        { title: "Foundations of Business Communication II", subtitle: "Module 4 CLA", deadline: "2025-03-19T23:59:59", link: "https://example.com/business-comm" },
+        { title: "Foundations of Business Communication II", subtitle: "Module 4 CLA", deadline: "2025-03-19T23:59:59", link: "https://apps.iimbx.edu.in/learning/course/course-v1:IIMBx+AE21x+BBA_DBE_B1/block-v1:IIMBx+AE21x+BBA_DBE_B1+type@sequential+block@a30079406b774766945f7df7ba37c95b/block-v1:IIMBx+AE21x+BBA_DBE_B1+type@vertical+block@3d2d25f969b84b3b87395be337ec5300" },
         { title: "Principles of Microeconomics", subtitle: "Module 4 CLA", deadline: "2025-03-19T23:59:59", link: "https://example.com/microeconomics" },
         { title: "Venturing on a Budget: Rs250 Venture", subtitle: "Module 3 CLA", deadline: "2025-03-19T23:59:59", link: "https://example.com/venture" },
         { title: "Advanced Statistics for Business", subtitle: "Mid-Term 2", deadline: "2025-03-26T23:59:59", link: "https://example.com/statistics" }
